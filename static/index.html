@@ -42,7 +42,44 @@
         <div class="cont">
             <div class="wrapper">
                 <h1>rtosh's blog :-)</h1>
+
+                <p>I'm rtosh</p>
+
+                <h2>posts</h2>
+
+                <ul class="posts">
+                    <li>
+                        <h2><a href="/post/0" class="styled">This is a post about posts.</a></h2>
+                        <small class="date" title="2026-02-25T14:00:00.000Z">Wed, Feb 25, 2026</small>
+
+                        <p class="summary">This is a short summary of the post about posts.</h2>
+                    </li>
+
+                    <li>
+                        <h2><a href="/post/1" class="styled">This is a post about posts.</a></h2>
+                        <small class="date" title="2026-02-25T14:00:00.000Z">Wed, Feb 25, 2026</small>
+
+                        <p class="summary">This is a short summary of the post about posts.</h2>
+                    </li>
+
+                    <li>
+                        <h2><a href="/post/2" class="styled">This is a post about posts.</a></h2>
+                        <small class="date" title="2026-02-25T14:00:00.000Z">Wed, Feb 25, 2026</small>
+
+                        <p class="summary">This is a short summary of the post about posts.</h2>
+                    </li>
+                </ul>
             </div>
         </div>
+
+        <script type="module">
+            import { ago } from "/js/ago.js";
+
+            setInterval(() => {
+                for (const span of document.getElementsByClassName("date")) {
+                    span.textContent = ago(new Date(span.title), "the future (is client clock offset?)");
+                }
+            }, 500);
+        </script>
     </body>
 </html>
