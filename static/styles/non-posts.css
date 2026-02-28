@@ -1,0 +1,48 @@
+.wrapper ul.non-posts {
+    margin-bottom: 16px;
+}
+
+.wrapper h2 {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.wrapper form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.wrapper input[type=text] {
+    width: 240px;
+    display: block;
+    background: linear-gradient(#181818, #080808);
+    color: #ffffff;
+    padding: 6px;
+    border: 1px solid var(--border-color);
+    flex-grow: 1;
+}
+
+.wrapper input[type=text]:focus {
+    border-color: var(--accent-color);
+    outline: 1px solid var(--accent-color);
+}
+
+.wrapper input[type=text]::placeholder {
+    color: #a8a8a8;
+}
+
+.wrapper input[type=submit] {
+    width: 120px;
+    display: block;
+    background: linear-gradient(#148fb8, #127da1);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 4px 16px;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.wrapper input[type=submit]:active {
+    background: #143db8;
+}

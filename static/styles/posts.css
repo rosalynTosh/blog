@@ -1,0 +1,40 @@
+.wrapper h1 {
+    margin-bottom: 48px;
+}
+
+.wrapper ul.posts {
+    list-style-type: none;
+    padding: 0;
+}
+
+.wrapper ul.posts > li {
+    display: block;
+    /* border: 1px solid var(--dark-border-color);
+    padding: 16px; */
+    margin-bottom: 16px;
+}
+
+.wrapper ul.posts > li:not(:last-child)::after {
+    content: '--';
+
+    display: block;
+    margin-top: 16px;
+    color: #888888;
+}
+
+.wrapper ul.posts > li > *:last-child {
+    margin-bottom: 0;
+}
+
+.wrapper ul.posts > li h2 {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.wrapper ul.posts > li small.date {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 8px;
+    font-family: var(--mono-font-stack);
+    color: #a8a8a8;
+}

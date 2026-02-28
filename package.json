@@ -1,0 +1,23 @@
+{
+    "name": "rtosh-blog",
+    "version": "0.0.0",
+    "description": "",
+    "homepage": "https://github.com/rosalynTosh/blog",
+    "bugs": {
+        "url": "https://github.com/rosalynTosh/blog/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rosalynTosh/blog.git"
+    },
+    "license": "MIT",
+    "author": "Rosalyn Tosh",
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "npx tsc && cp dist/ago.js* static/js"
+    },
+    "devDependencies": {
+        "@types/node": "^25.3.2"
+    }
+}

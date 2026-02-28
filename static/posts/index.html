@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>posts - rtosh's blog :-)</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/styles/fonts.css">
+        <link rel="stylesheet" href="/styles/base.css">
+        <link rel="stylesheet" href="/styles/posts.css">
+
+        <script type="module" src="/js/ago.js"></script>
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <h1><a href="/">rtosh's blog</a></h1>
+
+            <div class="pseudonyms">
+                <p>Rosalyn Tosh (rydwolf)</p>
+                <p>she/her</p>
+            </div>
+
+            <ul class="socials links-styled no-visited">
+                <li><a href="https://github.com/rosalyntosh/" target="_blank" rel="noopener noreferrer">GitHub</a> &middot; <a href="https://github.com/Radvylf/" target="_blank" rel="noopener noreferrer">(old)</a></li>
+                <li><a href="https://www.instagram.com/abstractrosalynfactory/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://codegolf.stackexchange.com/users/79857/rydwolf" target="_blank" rel="noopener noreferrer">CGCC</a> &middot; <a href="https://langdev.stackexchange.com/users/5/rydwolf" target="_blank" rel="noopener noreferrer">PLDI</a></li>
+                <li><a href="https://cmureadme.com/staff/roan-tysh/" target="_blank" rel="noopener noreferrer">CMU readme</a></li>
+            </ul>
+
+            <hr>
+
+            <h2>nav bar</h2>
+
+            <ul class="nav-bar links-styled no-visited">
+                <li><a href="/posts">posts</a></li>
+                <li><a href="/non-posts">non-posts</a></li>
+            </ul>
+
+            <!--<p class="rss"><a href="/rss.xml">rss</a></p>-->
+        </div>
+
+        <div class="cont">
+            <div class="wrapper">
+                <h1>posts</h1>
+
+                <ul class="posts">
+                    <li>
+                        <h2><a href="/post/0" class="styled">This is a post about posts.</a></h2>
+                        <small class="date" title="2026-02-25T14:00:00.000Z">Wed, Feb 25, 2026</small>
+
+                        <p class="summary">This is a short summary of the post about posts.</h2>
+                    </li>
+
+                    <li>
+                        <h2><a href="/post/1" class="styled">This is a post about posts.</a></h2>
+                        <small class="date" title="2026-02-25T14:00:00.000Z">Wed, Feb 25, 2026</small>
+
+                        <p class="summary">This is a short summary of the post about posts.</h2>
+                    </li>
+
+                    <li>
+                        <h2><a href="/post/2" class="styled">This is a post about posts.</a></h2>
+                        <small class="date" title="2026-02-25T14:00:00.000Z">Wed, Feb 25, 2026</small>
+
+                        <p class="summary">This is a short summary of the post about posts.</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="module">
+            // function ago(date) {
+            //     const now = new Date();
+            //     const diff = now.getTime() - date.getTime();
+
+            //     const SECONDS = 1000;
+            //     const MINUTES = 60 * SECONDS;
+            //     const HOURS = 60 * MINUTES;
+            //     const DAYS = 24 * HOURS;
+            //     const WEEKS = 7 * DAYS;
+
+            //     function pluralizeAgo(n, unit) {
+            //         return n + " " + unit + (n == 1 ? "" : "s") + " ago";
+            //     }
+
+            //     if (diff < 0) {
+            //         return "the future (is client clock offset?)";
+            //     } else if (diff < HOURS) {
+            //         return pluralizeAgo(Math.floor(diff / MINUTES), "minute");
+            //     } else if (diff < DAYS) {
+            //         return pluralizeAgo(Math.floor(diff / HOURS), "hour");
+            //     } else if (diff < WEEKS) {
+            //         return pluralizeAgo(Math.floor(diff / DAYS), "day");
+            //     } else if (diff < 4 * WEEKS) {
+            //         return pluralizeAgo(Math.floor(diff / WEEKS), "week");
+            //     } else {
+            //         const months = (now.getUTCFullYear() - date.getUTCFullYear()) * 12 + (now.getUTCMonth() - date.getUTCMonth()) + (now.getUTCDate() - date.getUTCDate()) / 32;
+
+            //         if (Math.round(months) < 12) {
+            //             return pluralizeAgo(Math.max(1, Math.round(months)), "month");
+            //         } else {
+            //             return pluralizeAgo(Math.max(1, Math.round(months / 12)), "year");
+            //         }
+            //     }
+            // }
+
+            setInterval(() => {
+                for (const span of document.getElementsByClassName("date")) {
+                    span.textContent = ago(new Date(span.title));
+                }
+            }, 500);
+        </script>
+    </body>
+</html>

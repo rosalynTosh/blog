@@ -1,0 +1,12 @@
+.wrapper h1 {
+    margin-bottom: 8px;
+}
+
+.wrapper small.date {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 24px;
+    font-family: var(--mono-font-stack);
+    color: #a8a8a8;
+}
