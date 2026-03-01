@@ -1,6 +1,8 @@
 bugs.jsonl
 pull
 
+static/draft/
+
 node_modules/
 
 dist/
