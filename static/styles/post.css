@@ -19,3 +19,8 @@
 .wrapper ol, .wrapper ul {
     margin-bottom: 16px;
 }
+
+.wrapper p.note {
+    text-align: center;
+    font-style: italic;
+}

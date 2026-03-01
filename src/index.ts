@@ -99,7 +99,7 @@ const srv = http.createServer(async (req, res) => {
                 }
             }
 
-            res.writeHead(204);
+            res.writeHead(202);
             res.end();
         });
     } else {
