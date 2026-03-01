@@ -201,3 +201,18 @@ body {
 .wrapper p {
     margin-bottom: 16px;
 }
+
+@media screen and (max-width: 1088px) {
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--dark-border-color);
+        height: unset;
+        overflow-y: unset;
+        background: #181818;
+    }
+}
