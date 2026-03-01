@@ -78,7 +78,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--title-font-stack);
     line-height: 1.25;
-    text-wrap: balance;
     text-align: left;
 }
 
@@ -191,6 +190,7 @@ body {
     width: calc(100% - 128px);
     max-width: 720px;
     padding-top: 128px;
+    margin-bottom: 64px;
 }
 
 .wrapper h1 {

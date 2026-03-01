@@ -10,3 +10,12 @@
     font-family: var(--mono-font-stack);
     color: #a8a8a8;
 }
+
+.wrapper h2 {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.wrapper ol, .wrapper ul {
+    margin-bottom: 16px;
+}
