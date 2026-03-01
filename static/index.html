@@ -72,14 +72,6 @@
             </div>
         </div>
 
-        <script type="module">
-            import { ago } from "/js/ago.js";
-
-            setInterval(() => {
-                for (const span of document.getElementsByClassName("date")) {
-                    span.textContent = ago(new Date(span.title), "the future (is client clock offset?)");
-                }
-            }, 500);
-        </script>
+        <!--<script type="module" src="/js/tick-script.js"></script>-->
     </body>
 </html>

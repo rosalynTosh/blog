@@ -21,7 +21,7 @@ const srv = http.createServer(async (req, res) => {
     if (req.method == "GET" && (req.url == "" || req.url == "/" || req.url == "/index.html" || req.url == "/index.html/")) {
         const posts = await fs.readFile("static/index.html", "utf8");
 
-        const agoPosts = posts.replace(/(?<=<small class="date" title="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)">).*(?=<\/small>)/g, (_, ts) => ago(new Date(ts), FUTURE));
+        const agoPosts = posts.replace(/(?<=<small class="date" title="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)">).*(?=<\/small>)/g, (_, ts) => ago(new Date(ts), FUTURE)).replace(/<!--(<script type="module" src="\/js\/tick-script\.js"><\/script>)-->/g, "$1");
 
         res.writeHead(200);
         res.end(agoPosts);
