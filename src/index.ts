@@ -1,5 +1,6 @@
 import * as http from 'node:http';
 import * as fs from 'node:fs/promises';
+import * as querystring from 'node:querystring';
 import { ago } from './ago.js';
 
 const MAX_BUFFER_SIZE = 10;
@@ -43,26 +44,32 @@ const srv = http.createServer(async (req, res) => {
         req.on("end", () => {
             const string = Buffer.concat(chunks).toString();
 
-            let json;
+            let parts;
             try {
-                json = JSON.parse(string);
+                parts = querystring.parse(string);
             } catch (err) {
                 res.writeHead(400);
                 res.end();
                 return;
             }
 
-            if (json === null || json === undefined || typeof json != "object" || Array.isArray(json)) {
-                res.writeHead(400);
-                res.end();
-                return;
-            } else if (!("bug" in json) || typeof json.bug != "string" || [...json.bug].length > MAX_BUG_STRSIZE + MAX_BUG_STRSIZE_GRACE) {
-                res.writeHead(400);
-                res.end();
-                return;
-            } else if (json.bug.length != "") {
-                const bug: string = json.bug;
+            const bugVal = parts["bug"];
 
+            if (bugVal === undefined || Array.isArray(bugVal) && bugVal.length != 1) {
+                res.writeHead(400);
+                res.end();
+                return;
+            }
+
+            const bug: string = Array.isArray(bugVal) ? bugVal[0] : bugVal;
+
+            if ([...bug].length > MAX_BUG_STRSIZE + MAX_BUG_STRSIZE_GRACE) {
+                res.writeHead(400);
+                res.end();
+                return;
+            }
+
+            if (bug != "") {
                 const buffer = buffers.get(ip);
 
                 if (buffer === undefined) {
