@@ -215,4 +215,9 @@ body {
         overflow-y: unset;
         background: #181818;
     }
+
+    .cont {
+        height: unset;
+        overflow-y: unset;
+    }
 }
