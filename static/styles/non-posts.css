@@ -2,6 +2,15 @@
     margin-bottom: 16px;
 }
 
+.wrapper code {
+    padding: 0 3px;
+    border-radius: 2px;
+    background-color: #242424;
+    color: #ffffff;
+    font-size: 12px;
+    font-family: var(--mono-font-stack);
+}
+
 .wrapper h2 {
     font-size: 14px;
     margin-bottom: 16px;
