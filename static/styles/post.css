@@ -24,3 +24,8 @@
     text-align: center;
     font-style: italic;
 }
+
+.wrapper h2::before {
+    content: '▶ ';
+    color: var(--accent-color);
+}
