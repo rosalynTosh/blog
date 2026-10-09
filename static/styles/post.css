@@ -34,6 +34,10 @@
     font-family: var(--mono-font-stack);
 }
 
+.transcript.nomono {
+    font-family: inherit;
+}
+
 .signoff {
     color: var(--gray-font-color);
 }
