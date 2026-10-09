@@ -29,3 +29,11 @@
     content: '▶ ';
     color: var(--accent-color);
 }
+
+.transcript {
+    font-family: var(--mono-font-stack);
+}
+
+.signoff {
+    color: var(--gray-font-color);
+}

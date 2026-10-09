@@ -48,6 +48,7 @@ img {
 :root {
     --background-color: #000000;
     --font-color: #dedede;
+    --gray-font-color: #888888;
     --accent-color: #47c2eb;
     --dark-accent-color: #305ee8;
     --red-color: #b81414;
