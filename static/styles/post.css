@@ -30,6 +30,11 @@
     color: var(--accent-color);
 }
 
+.wrapper h3 {
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
 .transcript {
     font-family: var(--mono-font-stack);
 }
