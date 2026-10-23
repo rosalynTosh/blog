@@ -108,6 +108,11 @@ p a, .links-styled a, a.styled {
     text-decoration: underline;
 }
 
+.disabled_link {
+    color: var(--gray-font-color);
+    text-decoration: underline;
+}
+
 p a:visited, .links-styled:not(.no-visited) a:visited, a.styled:visited {
     color: var(--dark-accent-color);
 }
