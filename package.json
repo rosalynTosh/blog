@@ -18,6 +18,6 @@
         "build": "npx tsc && cp dist/ago.js* static/js && cp dist/tick-script.js* static/js"
     },
     "devDependencies": {
-        "@types/node": "^25.3.2"
+        "@types/node": "^25.9.9"
     }
 }

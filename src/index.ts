@@ -24,15 +24,19 @@ const srv = http.createServer(async (req, res) => {
     if (req.method == "GET" && (path == "" || path == "/" || path == "/index.html" || path == "/index.html/")) {
         const posts = await fs.readFile("static/index.html", "utf8");
 
-        const agoPosts = posts.replace(/(?<=<small class="date" title="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)">).*(?=<\/small>)/g, (_, ts) => ago(new Date(ts), FUTURE)).replace(/<!--(<script type="module" src="\/js\/tick-script\.js"><\/script>)-->/g, "$1");
+        const agoPosts = Buffer.from(posts.replace(/(?<=<small class="date" title="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)">).*(?=<\/small>)/g, (_, ts) => ago(new Date(ts), FUTURE)).replace(/<!--(<script type="module" src="\/js\/tick-script\.js"><\/script>)-->/g, "$1"), "utf-8");
 
+        res.setHeader("Content-Type", "text/html");
+        res.setHeader("Content-Length", agoPosts.byteLength);
         res.writeHead(200);
         res.end(agoPosts);
     } else if (req.method == "GET" && (path == "/posts" || path == "/posts/" || path == "/posts/index.html" || path == "/posts/index.html/")) {
         const posts = await fs.readFile("static/posts/index.html", "utf8");
 
-        const agoPosts = posts.replace(/(?<=<small class="date" title="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)">).*(?=<\/small>)/g, (_, ts) => ago(new Date(ts), FUTURE));
+        const agoPosts = Buffer.from(posts.replace(/(?<=<small class="date" title="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)">).*(?=<\/small>)/g, (_, ts) => ago(new Date(ts), FUTURE)), "utf-8");
 
+        res.setHeader("Content-Type", "text/html");
+        res.setHeader("Content-Length", agoPosts.byteLength);
         res.writeHead(200);
         res.end(agoPosts);
     } else if (req.method == "POST" && (path == "/bug" || path == "/bug/")) {
