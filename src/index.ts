@@ -19,21 +19,23 @@ const buffers: Map<string, BugRcd[]> = new Map(); // maps IP address to buffer o
 let visited: Set<string> = new Set();
 
 const srv = http.createServer(async (req, res) => {
-    if (req.method == "GET" && (req.url == "" || req.url == "/" || req.url == "/index.html" || req.url == "/index.html/")) {
+    const path = req.url === undefined ? undefined : req.url.split("?")[0];
+    
+    if (req.method == "GET" && (path == "" || path == "/" || path == "/index.html" || path == "/index.html/")) {
         const posts = await fs.readFile("static/index.html", "utf8");
 
         const agoPosts = posts.replace(/(?<=<small class="date" title="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)">).*(?=<\/small>)/g, (_, ts) => ago(new Date(ts), FUTURE)).replace(/<!--(<script type="module" src="\/js\/tick-script\.js"><\/script>)-->/g, "$1");
 
         res.writeHead(200);
         res.end(agoPosts);
-    } else if (req.method == "GET" && (req.url == "/posts" || req.url == "/posts/" || req.url == "/posts/index.html" || req.url == "/posts/index.html/")) {
+    } else if (req.method == "GET" && (path == "/posts" || path == "/posts/" || path == "/posts/index.html" || path == "/posts/index.html/")) {
         const posts = await fs.readFile("static/posts/index.html", "utf8");
 
         const agoPosts = posts.replace(/(?<=<small class="date" title="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)">).*(?=<\/small>)/g, (_, ts) => ago(new Date(ts), FUTURE));
 
         res.writeHead(200);
         res.end(agoPosts);
-    } else if (req.method == "POST" && (req.url == "/bug" || req.url == "/bug/")) {
+    } else if (req.method == "POST" && (path == "/bug" || path == "/bug/")) {
         const timestamp = new Date();
         const sockAddr = req.socket.address();
         const ip = (req.headers["x-forwarded-for"] as Exclude<typeof req["headers"]["x-forwarded-for"], string[]>) ?? ("address" in sockAddr ? sockAddr.address : "0.0.0.0");
