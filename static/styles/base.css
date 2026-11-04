@@ -48,13 +48,41 @@ img {
 :root {
     --background-color: #000000;
     --font-color: #dedede;
-    --gray-font-color: #888888;
+    --gray-font-color: #a8a8a8;
     --accent-color: #47c2eb;
-    --dark-accent-color: #305ee8;
-    --red-color: #b81414;
+    --visited-accent-color: #3c64dd;
+    --disabled-accent-color: #888888;
+    --red-accent-color: #b81414;
     --border-color: #888888;
-    --light-border-color: #cccccc;
-    --dark-border-color: #444444;
+
+    --code-background-color: #242424;
+    --code-font-color: #ffffff;
+
+    --surface-background: linear-gradient(#181818, #080808);
+    --surface-accent-background: linear-gradient(#148fb8, #127da1);
+    --surface-accent-active-background: #143db8;
+    --surface-font-color: #ffffff;
+    --surface-gray-font-color: #a8a8a8;
+    --surface-border-color: #444444;
+
+    --print-background-color: #ffffff;
+    --print-font-color: #000000;
+    --print-gray-font-color: #666666;
+    --print-accent-color: #0099cc;
+    --print-visited-accent-color: #0039e6;
+    --print-disabled-accent-color: #333333;
+    --print-red-accent-color: #cc0000;
+    --print-border-color: #666666;
+
+    --print-code-background-color: #e7e7e7;
+    --print-code-font-color: #000000;
+
+    --print-surface-background: #e7e7e7;
+    --print-surface-accent-background: #e7e7e7;
+    --print-surface-accent-active-background: #e7e7e7;
+    --print-surface-font-color: #000000;
+    --print-surface-gray-font-color: #000000;
+    --print-surface-border-color: #444444;
 
     --sans-font-stack: 'Atkinson Hyperlegible', sans-serif;
     --mono-font-stack: 'Roboto Mono', monospace;
@@ -108,17 +136,26 @@ p a, .links-styled a, a.styled {
     text-decoration: underline;
 }
 
-.disabled_link {
-    color: var(--gray-font-color);
+.disabled-link {
+    color: var(--disabled-accent-color);
     text-decoration: underline;
 }
 
 p a:visited, .links-styled:not(.no-visited) a:visited, a.styled:visited {
-    color: var(--dark-accent-color);
+    color: var(--visited-accent-color);
 }
 
 p a:active, .links-styled a:active, a.styled:active {
-    color: var(--red-color);
+    color: var(--red-accent-color);
+}
+
+p code, .links-styled code {
+    padding: 0 3px;
+    border-radius: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-font-color);
+    font-size: 12px;
+    font-family: var(--mono-font-stack);
 }
 
 hr {
@@ -126,6 +163,48 @@ hr {
     height: 1px;
     background-color: var(--border-color);
     margin: 16px 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    break-inside: avoid;
+}
+
+@media print {
+    body {
+        background-color: var(--print-background-color);
+        color: var(--print-font-color);
+
+        print-color-adjust: exact !important;
+    }
+
+    p a, .links-styled a, a.styled {
+        color: var(--print-accent-color);
+    }
+
+    .disabled-link {
+        color: var(--print-disabled-accent-color);
+    }
+
+    p a:visited, .links-styled:not(.no-visited) a:visited, a.styled:visited {
+        color: var(--print-visited-accent-color);
+    }
+
+    p a:active, .links-styled a:active, a.styled:active {
+        color: var(--print-red-accent-color);
+    }
+
+    p code, .links-styled code {
+        background-color: var(--print-code-background-color);
+        color: var(--print-code-font-color);
+    }
+
+    hr {
+        background-color: var(--print-border-color);
+    }
+}
+
+@page {
+    margin: 0.5in;
 }
 
 /* **** */
@@ -136,11 +215,11 @@ body {
 
 .sidebar {
     width: 240px;
-    border-right: 1px solid var(--dark-border-color);
+    border-right: 1px solid var(--surface-border-color);
     padding: 16px;
     height: 100vh;
     overflow-y: scroll;
-    background: linear-gradient(#181818, #080808);
+    background: var(--surface-background);
 }
 
 .sidebar h1 {
@@ -216,7 +295,7 @@ body {
     .sidebar {
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid var(--dark-border-color);
+        border-bottom: 1px solid var(--surface-border-color);
         height: unset;
         overflow-y: unset;
         background: #181818;
@@ -225,5 +304,23 @@ body {
     .cont {
         height: unset;
         overflow-y: unset;
+    }
+}
+
+@media print {
+    .sidebar {
+        display: none;
+    }
+
+    .cont {
+        height: unset;
+        overflow-y: unset;
+    }
+
+    .wrapper {
+        width: unset;
+        max-width: unset;
+        padding: 0;
+        margin: 0;
     }
 }

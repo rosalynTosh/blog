@@ -8,7 +8,7 @@
     font-size: 12px;
     margin-bottom: 48px;
     font-family: var(--mono-font-stack);
-    color: #a8a8a8;
+    color: var(--gray-font-color);
 }
 
 .wrapper h2 {
@@ -45,4 +45,18 @@
 
 .signoff {
     color: var(--gray-font-color);
+}
+
+@media print {
+    .wrapper small.date {
+        color: var(--print-light-gray-font-color);
+    }
+
+    .wrapper h2::before {
+        color: var(--print-accent-color);
+    }
+
+    .signoff {
+        color: var(--print-light-gray-font-color);
+    }
 }

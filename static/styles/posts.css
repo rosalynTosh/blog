@@ -5,9 +5,9 @@
 
 .wrapper ul.posts > li {
     display: block;
-    /* border: 1px solid var(--dark-border-color);
-    padding: 16px; */
     margin-bottom: 16px;
+
+    break-inside: avoid;
 }
 
 .wrapper ul.posts > li:not(:last-child)::after {
@@ -15,7 +15,7 @@
 
     display: block;
     margin-top: 16px;
-    color: #888888;
+    color: var(--border-color);
 }
 
 .wrapper ul.posts > li > *:last-child {
@@ -32,5 +32,15 @@
     font-size: 11px;
     margin-bottom: 8px;
     font-family: var(--mono-font-stack);
-    color: #a8a8a8;
+    color: var(--gray-font-color);
+}
+
+@media print {
+    .wrapper ul.posts > li:not(:last-child)::after {
+        color: var(--print-border-color);
+    }
+
+    .wrapper ul.posts > li small.date {
+        color: var(--print-gray-font-color);
+    }
 }
