@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>rtosh's blog</title>
+        <link>https://www.rtosh.blog/</link>
+        <description>Rosalyn Tosh's blog!</description>
+        <language>en-us</language>
+
+        <item>
+            <title>The revolution will look like a campus</title>
+            <link>https://www.rtosh.blog/post/campuses/</link>
+            <guid isPermaLink="true">https://www.rtosh.blog/post/campuses/</guid>
+            <pubDate>30 Oct 2026 23:45:00 +0000</pubDate>
+
+            <description>Using the idea of a "campus" as a model for little bubbles of semi-autonomy. If you can't do a big revolution, why not a small one?</description>
+        </item>
+
+        <item>
+            <title>Why I wrote "free Palestine by any means necessary" on The Fence</title>
+            <link>https://www.rtosh.blog/post/why-i-wrote-free-palestine/</link>
+            <guid isPermaLink="true">https://www.rtosh.blog/post/why-i-wrote-free-palestine/</guid>
+            <pubDate>16 Oct 2026 20:40:00 +0000</pubDate>
+
+            <description>Why I wrote "free Palestine by any means necessary" on The Fence, intended for CMU and my hearing officer to consider as part of the investigation into my June 9th Fence painting.</description>
+        </item>
+
+        <item>
+            <title>Thoughts on forgiveness (removed under coercion)</title>
+            <link>https://www.rtosh.blog/post/thoughts-on-forgiveness/</link>
+            <guid isPermaLink="true">https://www.rtosh.blog/post/thoughts-on-forgiveness/</guid>
+            <pubDate>09 Oct 2026 06:00:00 +0000</pubDate>
+
+            <description>A transcript of thoughts sent to Gina Casalegno, CMU's Dean of Students and Vice President for Student Affairs. (Removed 2026-10-23.)</description>
+        </item>
+
+        <item>
+            <title>Cavitation damage as an analogy for insurrectionary anarchism</title>
+            <link>https://www.rtosh.blog/post/cavitation/</link>
+            <guid isPermaLink="true">https://www.rtosh.blog/post/cavitation/</guid>
+            <pubDate>07 Aug 2026 02:00:00 +0000</pubDate>
+
+            <description>A short analogy comparing protests like the Capitol Hill Autonomous Zone and the Gaza Solidarity Encampment, both of which peacefully displaced policing from a physical space, to cavitation, which is a phenomenon in fluid dynamics. I then reflect a bit on how this analogy would project a slow victory for the anarchist cause. (Assumes working knowledge of anarchist thought.)</description>
+        </item>
+        
+        <item>
+            <title>Distributed refuge and religious poverty: some thoughts on home and community</title>
+            <link>https://www.rtosh.blog/post/home-and-community/</link>
+            <guid isPermaLink="true">https://www.rtosh.blog/post/home-and-community/</guid>
+            <pubDate>01 Mar 2026 03:00:00 +0000</pubDate>
+
+            <description>Some rambling on two concepts which inform how I think about home, community, and anti-authoritarian movements. The first is sort of the concept of livable or friendly spaces in hostile or unfamiliar places, and the second is the idea of religious poverty (which is quite distinct from material poorness).</description>
+        </item>
+    </channel>
+</rss>
