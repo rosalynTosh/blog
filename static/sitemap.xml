@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.rtosh.blog/</loc>
+        <lastmod>2026-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>https://www.rtosh.blog/posts/</loc>
+        <lastmod>2026-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>https://www.rtosh.blog/non-posts/</loc>
+        <lastmod>2026-11-06</lastmod>
+    </url>
+
+    <url>
+        <loc>https://www.rtosh.blog/post/campuses/</loc>
+        <lastmod>2026-10-30T23:45:00.000Z</lastmod>
+    </url>
+
+    <url>
+        <loc>https://www.rtosh.blog/post/why-i-wrote-free-palestine/</loc>
+        <lastmod>2026-10-16T20:40:00.000Z</lastmod>
+    </url>
+
+    <url>
+        <loc>https://www.rtosh.blog/post/cavitation/</loc>
+        <lastmod>2026-08-07T02:00:00.000Z</lastmod>
+    </url>
+
+    <url>
+        <loc>https://www.rtosh.blog/post/home-and-community/</loc>
+        <lastmod>2026-03-01T03:00:00.000Z</lastmod>
+    </url>
+</urlset>
