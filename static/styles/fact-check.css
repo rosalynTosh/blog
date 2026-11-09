@@ -1,0 +1,77 @@
+@media screen and (min-width: 1088px) {
+    .wrapper {
+        max-width: 1080px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inner-wrapper {
+        max-width: 720px;
+    }
+
+    .fact-check {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fact-check .fc-row {
+        display: grid;
+        grid-column: 1 / -1;
+        grid-template-columns: subgrid;
+    }
+
+    .fact-check .fc-orig {
+        padding-right: 24px;
+        border-right: 1px solid var(--border-color);
+    }
+
+    .fact-check .fc-comm {
+        padding-left: 24px;
+    }
+}
+
+.fc {
+    background-color: #101010;
+    border: 1px solid var(--surface-border-color);
+    padding: 18px;
+    margin-bottom: 12px;
+}
+
+.fc p, .fc blockquote {
+    margin-bottom: 8px;
+}
+
+.fc blockquote span {
+    display: inline;
+    padding: 2px 0;
+    border-radius: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-font-color);
+    font-size: 12px;
+    font-family: var(--mono-font-stack);
+}
+
+.fc blockquote span::before, .fc blockquote span::after {
+    content: "\"";
+}
+
+.fc .true {
+    color: #47eb47;
+}
+
+.fc .mostly-true {
+    color: #99eb47;
+}
+
+.fc .rhetoric {
+    color: #ad9985;
+}
+
+.fc .false {
+    color: #b81414;
+}
+
+.fc *:last-child {
+    margin-bottom: 0;
+}

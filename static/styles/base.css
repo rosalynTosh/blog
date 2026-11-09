@@ -283,7 +283,7 @@ body {
     margin-bottom: 48px;
 }
 
-.wrapper p {
+.wrapper p, .wrapper blockquote {
     margin-bottom: 16px;
 }
 
